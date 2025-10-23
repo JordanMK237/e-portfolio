@@ -14,27 +14,47 @@ import Contact from "./components/Contact";
 import BackToTop from "./components/BackToTop.tsx";
 
 
-export default function App() {
+function useFastReveal() {
     useEffect(() => {
-        const els = document.querySelectorAll<HTMLElement>("[data-reveal]");
+        const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+        const els = Array.from(document.querySelectorAll<HTMLElement>("[data-reveal]"));
+
         const io = new IntersectionObserver(
             (entries) => {
-                entries.forEach((entry) => {
-                    const el = entry.target as HTMLElement;
-                    if (entry.isIntersecting) {
-                        // option: délai individuel via data-delay (ex: "120ms", "0.2s")
-                        const delay = el.dataset.delay || "0ms";
-                        el.style.transitionDelay = delay;
-                        el.classList.add("visible");
-                        io.unobserve(el); // on révèle une fois
+                entries.forEach((en) => {
+                    if (!en.isIntersecting) return;
+                    const el = en.target as HTMLElement;
+
+                    // ✅ Couper tout délai sur mobile (écrase les inline styles)
+                    if (isMobile) {
+                        el.style.transitionDelay = "0ms";
+                        el.style.transitionDuration = "180ms"; // encore + nerveux
+                    } else {
+                        // Desktop : garder un léger cap si tu as des data-delay
+                        const raw = (el.getAttribute("data-delay") || "0").trim();
+                        const ms = Math.min(parseInt(raw, 10) || 0, 150);
+                        el.style.transitionDelay = `${ms}ms`;
                     }
+
+                    el.classList.add("visible");
+                    io.unobserve(el);
                 });
             },
-            { threshold: 0.15 }
+            {
+                // ✅ Déclenche AVANT que la section n’entre totalement dans le viewport
+                rootMargin: "0px 0px -12% 0px",
+                threshold: 0.05,
+            }
         );
+
         els.forEach((el) => io.observe(el));
         return () => io.disconnect();
     }, []);
+}
+
+export default function App() {
+    useFastReveal();
 
     return (
         <div className="page">

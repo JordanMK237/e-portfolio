@@ -471,27 +471,23 @@ body {
 
 
 /* ===== REVEAL AU SCROLL ===== */
-/* Reveal base */
+/* Base */
 [data-reveal]{
     opacity: 0;
-    transform: translateY(26px);
-    transition: opacity 100ms ease, transform 200ms ease; /* was 600ms */
+    transform: translateY(20px);
+    transition: opacity 300ms ease, transform 300ms ease;
     will-change: opacity, transform;
 }
 [data-reveal].visible{ opacity:1; transform:none; }
 
-/* Faster on tablets/phones */
+/* Mobile : encore plus court */
 @media (max-width: 768px){
-    [data-reveal]{
-        transform: translateY(18px);
-        transition-duration: 100ms;        /* speed up */
-    }
+    [data-reveal]{ transition-duration: 180ms; transform: translateY(14px); }
+}
+@media (max-width: 430px){
+    [data-reveal]{ transition-duration: 150ms; transform: translateY(10px); }
 }
 
-/* Ultra-small phones */
-@media (max-width: 430px){
-    [data-reveal]{ transition-duration: 50ms; transform: translateY(14px); }
-}
 
 /* Pour éviter que les sections se collent trop après l’intro */
 #content-start { height: 1px; }
