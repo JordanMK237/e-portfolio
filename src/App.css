@@ -67,8 +67,8 @@ body {
 }
 
 /* ========= BULLE NAV = NAV PRINCIPALE ========= */
-.fab-nav{
-    position: fixed;   /* indispensable pour flotter */
+.fab-nav {
+    position: fixed;
     z-index: 1000;
     display: grid;
     top: 80px;
@@ -76,55 +76,140 @@ body {
     grid-auto-flow: column;
     align-items: center;
     gap: 12px;
+    transition: all 0.3s ease;
 }
 
-/* pill fermée par défaut */
-.fab-menu{
-    display:flex; align-items:center; gap:10px;
-    background:var(--card); border:1px solid var(--soft);
-    padding:8px; border-radius:9999px;
-    box-shadow:0 10px 30px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.04);
+/* Menu pill fermé par défaut */
+.fab-menu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--card);
+    border: 1px solid var(--soft);
+    padding: 8px;
+    border-radius: 9999px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.04);
     transform: scaleX(0.6);
     transform-origin: right center;
-    opacity:0; pointer-events:none;
+    opacity: 0;
+    pointer-events: none;
     transition: transform .25s ease, opacity .18s ease;
 }
-.fab-nav.open .fab-menu{ transform: scaleX(1); opacity:1; pointer-events:auto; }
 
-.fab-link{
-    color:var(--mute); text-decoration:none; font-size:14px;
-    padding:8px 12px; border-radius:9999px;
+.fab-nav.open .fab-menu {
+    transform: scaleX(1);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Liens */
+.fab-link {
+    color: var(--mute);
+    text-decoration: none;
+    font-size: 14px;
+    padding: 8px 12px;
+    border-radius: 9999px;
     transition: color .15s ease, background .15s ease;
 }
-.fab-link:hover, .fab-link:focus-visible{
-    color:var(--text);
+.fab-link:hover,
+.fab-link:focus-visible {
+    color: var(--text);
     background: color-mix(in srgb, var(--soft) 55%, transparent);
     outline: none;
 }
 
-.brand.small{ display:flex; align-items:center; gap:8px; margin-right:2px; padding:6px 8px; border-radius:9999px; text-decoration:none; color:var(--text); }
-.brand-dot{
-    width:28px; height:28px; border-radius:50%; display:grid; place-items:center;
-    background: color-mix(in srgb, var(--accent) 22%, transparent);
-    border:1px solid color-mix(in srgb, var(--accent) 40%, transparent);
-    color: var(--accent); font-weight:800; font-size:14px;
-}
-.brand-name{ font-weight:700; font-size:14px; }
-
-.fab-toggle{
-    width:56px; height:56px; border-radius:50%; border:1px solid var(--soft);
+/* BOUTON Bulle */
+.fab-toggle {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 1px solid var(--soft);
     background: radial-gradient(120% 120% at 30% 25%, color-mix(in srgb, var(--accent) 18%, transparent), var(--card));
-    color:var(--text); display:grid; place-items:center; font-size:22px; cursor:grab;
-    box-shadow:0 10px 30px rgba(0,0,0,.4), inset 0 0 0 1px rgba(255,255,255,.05);
+    color: var(--text);
+    display: grid;
+    place-items: center;
+    font-size: 22px;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0,0,0,.4), inset 0 0 0 1px rgba(255,255,255,.05);
     transition: transform .12s ease, box-shadow .2s ease, background .2s ease;
-    touch-action: none; /* pour drag tactile */
+    touch-action: none;
 }
-.fab-toggle:hover{ transform: translateY(-1px); }
-.fab-toggle:active{ cursor:grabbing; }
-.fab-nav.open .fab-toggle{
+
+.fab-toggle:hover {
+    transform: translateY(-1px);
+}
+
+.fab-nav.open .fab-toggle {
     background: radial-gradient(120% 120% at 30% 25%, color-mix(in srgb, var(--neon) 22%, transparent), var(--card));
-    box-shadow: 0 0 14px 2px color-mix(in srgb, var(--neon) 50%, transparent), 0 10px 30px rgba(0,0,0,.45);
+    box-shadow: 0 0 14px 2px color-mix(in srgb, var(--neon) 50%, transparent),
+    0 10px 30px rgba(0,0,0,.45);
 }
+
+/* ================= RESPONSIVE ================= */
+
+/* Écrans ≤ 768px (tablettes et mobiles) */
+@media (max-width: 768px) {
+    .fab-nav {
+        top: auto;
+        bottom: 24px;
+        right: 24px;
+        gap: 8px;
+    }
+
+    .fab-toggle {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+
+    .fab-menu {
+        position: absolute;
+        bottom: 70px;
+        right: 0;
+        flex-direction: column;
+        align-items: flex-end;
+        transform-origin: bottom right;
+        padding: 12px;
+        backdrop-filter: blur(8px);
+    }
+
+    .fab-link {
+        font-size: 15px;
+        padding: 10px 16px;
+        text-align: right;
+        width: 100%;
+    }
+
+    .fab-nav.open .fab-menu {
+        transform: scaleY(1);
+        opacity: 1;
+    }
+
+    .fab-menu:not(.open) {
+        transform: scaleY(0.6);
+    }
+}
+
+/* Écrans ≤ 480px (petits smartphones) */
+@media (max-width: 480px) {
+    .fab-toggle {
+        width: 46px;
+        height: 46px;
+        font-size: 18px;
+    }
+
+    .fab-menu {
+        padding: 10px;
+        right: 0;
+        bottom: 60px;
+    }
+
+    .fab-link {
+        font-size: 14px;
+        padding: 8px 14px;
+    }
+}
+
 
 /* ========= HERO ========= */
 /* ====== HERO SECTION (photo gauche + texte droite) ====== */
