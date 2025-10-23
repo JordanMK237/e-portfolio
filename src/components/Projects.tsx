@@ -6,7 +6,7 @@ const IMAGES = {
     omarche: new URL("../assets/omarche2.jpg", import.meta.url).href,
     franceasso: new URL("../assets/france-asso2.png", import.meta.url).href,
     smarteco: new URL("../assets/Logo-SmartEco.png", import.meta.url).href,
-    eportfolio: new URL("../assets/e-portfolio.jpeg", import.meta.url).href,
+    eportfolio: new URL("../assets/portfolio.png", import.meta.url).href,
     placeholder: new URL("../assets/services/placeholder.jpg", import.meta.url).href, // optionnel
 };
 

@@ -38,7 +38,7 @@ const TRACKS: Track[] = [
         id: 1,
         title: "Whine",
         subtitle: "Afro-pop • Rap",
-        cover: new URL("../assets/Whine-cover.jpg", import.meta.url).href, // ➜ mets ton image
+        cover: new URL("../assets/Whine-Cover.jpg", import.meta.url).href, // ➜ mets ton image
         spotify: "https://open.spotify.com/intl-fr/track/3pCKdmjgpCAyzHiE7nopN2?si=fb219bdaa96b49a4",
         apple: "https://music.apple.com/fr/song/whine/1804082805",
         youtube: "https://www.youtube.com/watch?v=A4swRzo_gjw&list=RDA4swRzo_gjw&start_radio=1",
