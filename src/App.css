@@ -475,7 +475,7 @@ body {
 [data-reveal]{
     opacity: 0;
     transform: translateY(26px);
-    transition: opacity 480ms ease, transform 200ms ease; /* was 600ms */
+    transition: opacity 100ms ease, transform 200ms ease; /* was 600ms */
     will-change: opacity, transform;
 }
 [data-reveal].visible{ opacity:1; transform:none; }
