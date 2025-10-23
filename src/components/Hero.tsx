@@ -35,7 +35,7 @@ export default function Hero() {
                         à chaque collaboration.
                     </p>
 
-                    <a href="#projects.tsx" className="btn solid hero-btn">
+                    <a href="#projects" className="btn solid hero-btn">
                         Voir mes réalisations →
                     </a>
                 </div>

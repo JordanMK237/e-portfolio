@@ -11,6 +11,7 @@ import BubbleNav from "./components/BubbleNav";
 import Education from "./components/Education";
 import Cv from "./components/Cv";
 import Contact from "./components/Contact";
+import BackToTop from "./components/BackToTop.tsx";
 
 
 export default function App() {
@@ -61,20 +62,24 @@ export default function App() {
                 </section>
 
 
-                <section data-reveal data-delay="160ms">
+                <section data-reveal data-delay="100ms">
                     <Services/>
                 </section>
 
-                <section data-reveal data-delay="200ms">
+                <section data-reveal data-delay="100ms">
                     <Projects/>
                 </section>
 
-                <section data-reveal data-delay="120ms">
+                <section data-reveal data-delay="100ms">
                     <MusicFeature/>
                 </section>
 
-                <section data-reveal data-delay="120ms">
+                <section data-reveal data-delay="100ms">
                     <Contact/>
+                </section>
+
+                <section data-reveal data-delay="100ms">
+                    <BackToTop/>
                 </section>
             </main>
 

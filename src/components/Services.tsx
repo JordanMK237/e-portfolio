@@ -45,7 +45,7 @@ const cards: Card[] = [
             "Chaque site est conçu pour offrir une navigation fluide, une expérience utilisateur optimale et un référencement naturel (SEO) soigné.\n" +
             "Mon approche front-end repose sur la performance, la réactivité et la cohérence visuelle, afin de garantir des produits rapides, accessibles et esthétiques.",
         image: IMAGES.frontend,
-        tags: ["React", "Next.js"],
+        tags: ["React", "Next.js","Vue.js","Html","Css","Javascript","Node.js"],
     },
     {
         id: 4,
@@ -53,7 +53,7 @@ const cards: Card[] = [
         desc: "Développeur Full-Stack, j’assure la création d’interfaces modernes (front-end) et la mise en place d’architectures fiables et sécurisées (back-end).\n" +
             "Mon approche allie design, ergonomie et performance pour offrir des solutions sur mesure, du concept au déploiement.",
         image: IMAGES.fullstack,
-        tags: ["Branding", "Dev"],
+        tags: ["Firebase", "Sql","MongoDB","Mysql","Php","Database"],
     },
     {
         id: 5,
@@ -62,7 +62,7 @@ const cards: Card[] = [
             "Mon approche full-pack garantit une cohérence entre design et technologie, pour des produits à la fois esthétiques, performants et intuitifs.\n" +
             "Chaque projet est pensé dans sa globalité, afin de proposer une solution sur mesure, fidèle à votre vision et optimisée pour vos utilisateurs.",
         image: IMAGES.fullpack,
-        tags: ["Branding", "Dev"],
+        tags: ["UI/UX", "Front-End","Back-end"],
     },
 ];
 
