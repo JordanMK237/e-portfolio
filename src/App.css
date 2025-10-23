@@ -71,6 +71,8 @@ body {
     position: fixed;   /* indispensable pour flotter */
     z-index: 1000;
     display: grid;
+    top: 80px;
+    right: 80px;
     grid-auto-flow: column;
     align-items: center;
     gap: 12px;
