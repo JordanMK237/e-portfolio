@@ -32,7 +32,7 @@ export default function BubbleNav() {
             >
                 <a href="#home" className="fab-link">About</a>
                 <a href="#music" className="fab-link">Music</a>
-                <a href="#services" className="fab-link">Services</a>
+                <a href="#services" className="fab-link">Skills</a>
                 <a href="#projects" className="fab-link">Projects</a>
                 <a href="#contact" className="fab-link">Contact</a>
 

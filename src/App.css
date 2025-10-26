@@ -698,22 +698,27 @@ html {
 }
 
 /* bouton cercle ↗ en bas à droite */
-.svc-cta{
-    position:absolute;
-    right:14px; bottom:14px;
-    width:40px; height:40px;
-    display:grid; place-items:center;
-    border-radius:9999px;
+.svc-cta {
+    position: absolute;
+    right: 14px;
+    bottom: 14px;
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    border-radius: 9999px;
     background: color-mix(in srgb, var(--accent) 25%, transparent);
-    border:1px solid color-mix(in srgb, var(--accent) 55%, transparent);
-    color:#0a0a0c;
-    font-weight:700;
+    border: 1px solid color-mix(in srgb, var(--accent) 55%, transparent);
+    color: #0a0a0c;
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
     transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
-    box-shadow: 0 0 0 0 transparent;
 }
-.svc-card:hover .svc-cta{
+
+.svc-card:hover .svc-cta {
     transform: translateY(-2px);
-    box-shadow: 0 8px 18px rgba(0,0,0,.25);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
     background: var(--accent);
 }
 
@@ -994,6 +999,50 @@ html {
         width: 18px;
         height: 18px;
     }
+}
+
+
+.svc-desc {
+    margin-top: 10px;
+    color: var(--mute);
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+/* Bouton En savoir plus / Voir moins */
+.svc-more {
+    margin-top: 10px;
+    padding: 6px 12px;
+    border-radius: 9999px;
+    border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+    background: color-mix(in srgb, var(--accent) 10%, transparent);
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+
+.svc-more:hover {
+    background: color-mix(in srgb, var(--accent) 35%, transparent);
+    color: #0a0a0c;
+    transform: translateY(-1px);
+}
+
+/* Lien projet en bas de carte */
+.svc-link-wrap {
+    margin-top: 12px;
+}
+
+.svc-link {
+    font-size: 13px;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.svc-link:hover {
+    text-decoration: underline;
 }
 
 
