@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import Intro from "./components/Intro";
 import Hero from "./components/Hero";
 import MusicFeature from "./components/MusicFeature";
-import Services from "./components/Services";
+import Skills from "./components/Skills.tsx";
 import Projects from "./components/Projects";
 import Footer from "./components/Footer";
 import BubbleNav from "./components/BubbleNav";
@@ -83,7 +83,7 @@ export default function App() {
 
 
                 <section data-reveal data-delay="100ms">
-                    <Services/>
+                    <Skills/>
                 </section>
 
                 <section data-reveal data-delay="100ms">

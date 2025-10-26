@@ -638,7 +638,7 @@ html {
     transition: transform 0.2s ease;
 }
 
-/* ====== Services cards ====== */
+/* ====== Skills cards ====== */
 .services-grid{
     display:grid;
     gap:24px;

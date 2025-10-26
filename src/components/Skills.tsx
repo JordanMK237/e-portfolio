@@ -1,4 +1,4 @@
-// src/components/Services.tsx
+// src/components/Skills.tsx
 
 // Chemins résolus par le bundler (marche en dev + build)
 const IMAGES = {
@@ -66,7 +66,7 @@ const cards: Card[] = [
     },
 ];
 
-export default function Services() {
+export default function Skills() {
     return (
         <section id="services" className="section container services">
             <h1 className="section-title">Skills</h1>
