@@ -8,6 +8,7 @@ const IMAGES = {
     smarteco: new URL("../assets/Logo-SmartEco.png", import.meta.url).href,
     eportfolio: new URL("../assets/portfolio.png", import.meta.url).href,
     placeholder: new URL("../assets/services/placeholder.jpg", import.meta.url).href,
+    medlink: new URL("../assets/MedLink_logo.png", import.meta.url).href,
 };
 
 type Card = {
@@ -16,7 +17,10 @@ type Card = {
     desc: string;
     image: string;
     tags: string[];
-    link?: string;
+    link: {
+        github?: string;
+        demo?: string;
+    };
 };
 
 const cards: Card[] = [
@@ -30,7 +34,7 @@ const cards: Card[] = [
             "Découvrez le résultat ici :",
         image: IMAGES.qolibri,
         tags: ["UI/UX", "Front-End", "Html/CSS", "JavaScript","Php"],
-        link: "https://www.qolibri-cie.com/",
+        link: {github : "https://www.qolibri-cie.com/"},
     },
     {
         id: 2,
@@ -42,7 +46,7 @@ const cards: Card[] = [
             "Le projet complet est consultable sur mon GitHub :",
         image: IMAGES.omarche,
         tags: ["UI/UX", "Figma", "Front-End", "Back-end", "Mysql", "Php", "Api", "Html", "Css", "JavaScript"],
-        link: "https://github.com/JordanMK237/marche-Mbouda",
+        link: {github : "https://github.com/JordanMK237/marche-Mbouda"},
     },
     {
         id: 3,
@@ -56,7 +60,7 @@ const cards: Card[] = [
             "Le projet complet est consultable sur GitHub :",
         image: IMAGES.franceasso,
         tags: ["Android Studio", "Layouts", "Base de données", "Firebase","Back-end", "Gestion de projet", "Front-End"],
-        link: "https://github.com/tyranosx/SAE-S4.01",
+        link: {github : "https://github.com/JordanMK237/e-portfolio.git"},
     },
     {
         id: 4,
@@ -71,7 +75,7 @@ const cards: Card[] = [
             "Le projet complet est consultable sur mon GitHub :",
         image: IMAGES.smarteco,
         tags: ["Android Studio", "Layouts", "Base de données", "Firebase","Back-end", "Gestion de projet", "Front-End","API","Trello","Figma"],
-        link: "https://github.com/JordanMK237/ProjetDevMob",
+        link:{ github : "https://github.com/JordanMK237/ProjetDevMob" } ,
     },
     {
         id: 5,
@@ -82,6 +86,25 @@ const cards: Card[] = [
             "J’ai également assuré son hébergement et sa mise en ligne, garantissant un rendu fluide, responsive et professionnel.",
         image: IMAGES.eportfolio,
         tags: ["Front-End", "UI/UX", "React","Figma","Javascript","Css","Html"],
+        link:{ github : "https://github.com/JordanMK237/ProjetDevMob" },
+    },
+    {
+        id: 6,
+        title: "Medlink - Système Intelligent de Gestion d'Urgences Médicales",
+        desc:
+            " Dans le cadre de ma première SAE de BUT3, je participe au développement de MedLink, une plateforme intelligente de gestion d’urgences médicales destinée à assister les agents de régulation lors des appels.\n" +
+            "L’application vise à fluidifier la collecte d’informations critiques grâce à un agent conversationnel, tout en centralisant l’historique des échanges et les données utiles à la prise en charge.\n" +
+            "Parmi les fonctionnalités clés : transcription et synthèse vocale en temps réel, génération de réponses contextualisées, gestion des appels et interface web dédiée aux opérateurs et aux hôpitaux.\n" +
+            "Le projet repose sur une architecture web connectée à une API distante, avec un frontend Next.js et un backend NestJS intégrant des services IA (Groq, ElevenLabs) et une base de données Supabase.\n" +
+            "L’équipe s’appuie sur GitHub pour la collaboration, Figma pour le maquettage, Postman pour les tests d’API et Trello pour le suivi.\n" +
+            "Ce projet m’a permis de consolider mes compétences en développement web full‑stack, intégration d’API temps réel, IA conversationnelle et gestion de projet.\n" +
+            "Le projet complet est consultable sur Github et à travers une démo vidéo : ",
+        image: IMAGES.medlink,
+        tags: ["Next.js", "Supabase", "Docker", "Front-End","Back-end", "Gestion de projet", "Nest.js","IA","Méthode Agile","API","Agent IA"],
+        link: {
+            github: "https://github.com/tyranosx/SAE-S4.01",
+            demo: "https://drive.google.com/drive/folders/1WTVTRtXEcLzO--a6ANezg59ana5TNh13?usp=drive_link"
+        }
     },
 ];
 
@@ -154,19 +177,31 @@ export default function Services() {
                                 </button>
 
                                 {/* Lien externe si présent */}
-                                {c.link && (
-                                    <div className="svc-link-wrap">
+                                <div className="svc-link-wrap">
+                                    {c.link?.github && (
                                         <a
-                                            href={c.link}
+                                            href={c.link.github}
                                             target="_blank"
                                             rel="noreferrer"
-                                            className="svc-cta"
-                                            aria-label="Voir le projet"
+                                            className="svc-btn"
                                         >
-                                            ↗
+                                            GitHub
                                         </a>
-                                    </div>
-                                )}
+                                    )}
+
+                                    {c.link?.demo && (
+                                        <a
+                                            href={c.link.demo}
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            className="svc-btn"
+                                        >
+                                            Démo
+                                        </a>
+                                    )}
+                                </div>
+
+
                             </div>
                         </div>
                     );

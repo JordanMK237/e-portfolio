@@ -1,7 +1,7 @@
 export default function CV() {
     // 🔗 Lien direct vers ton CV hébergé sur Google Drive
     const driveLink =
-        "https://drive.google.com/file/d/16TmYSoJ8D7MPzSZPWAr_wWP-TDnq8_Ez/view?usp=sharing"; // ← ton lien ici
+        "https://drive.google.com/drive/folders/14e78p9e6ZHr0QeR9N9umr2io85WvpRox?usp=drive_link"; // ← ton lien ici
 
     return (
         <section className="cv-section" id="cv">

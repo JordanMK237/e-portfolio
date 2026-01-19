@@ -716,7 +716,13 @@ html {
     transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
 }
 
+
 .svc-card:hover .svc-cta {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+    background: var(--accent);
+}
+.svc-card:hover .svc-ctb {
     transform: translateY(-2px);
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
     background: var(--accent);
@@ -726,6 +732,33 @@ html {
 .svc-card:focus-visible{
     outline: none;
     box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 45%, transparent);
+}
+
+.svc-link-wrap {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.svc-btn {
+    padding: 8px 16px;
+    border-radius: 8px;
+    background: #f4c542; /* ton jaune */
+    color: #000;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.svc-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+}
+
+
+.svc-cta:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
 }
 
 
