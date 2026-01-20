@@ -102,7 +102,7 @@ const cards: Card[] = [
         image: IMAGES.medlink,
         tags: ["Next.js", "Supabase", "Docker", "Front-End","Back-end", "Gestion de projet", "Nest.js","IA","Méthode Agile","API","Agent IA"],
         link: {
-            github: "https://github.com/tyranosx/SAE-S4.01",
+            github: "https://github.com/daywon03/Medlink.git",
             demo: "https://drive.google.com/drive/folders/1WTVTRtXEcLzO--a6ANezg59ana5TNh13?usp=drive_link"
         }
     },
