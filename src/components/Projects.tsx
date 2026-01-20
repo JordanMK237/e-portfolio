@@ -92,7 +92,7 @@ const cards: Card[] = [
         id: 6,
         title: "Medlink - Système Intelligent de Gestion d'Urgences Médicales",
         desc:
-            " Dans le cadre de ma première SAE de BUT3, je participe au développement de MedLink, une plateforme intelligente de gestion d’urgences médicales destinée à assister les agents de régulation lors des appels.\n" +
+            " Dans le cadre de ma première SAE de BUT3, j'ai participé au développement de MedLink, une plateforme intelligente de gestion d’urgences médicales destinée à assister les agents de régulation lors des appels.\n" +
             "L’application vise à fluidifier la collecte d’informations critiques grâce à un agent conversationnel, tout en centralisant l’historique des échanges et les données utiles à la prise en charge.\n" +
             "Parmi les fonctionnalités clés : transcription et synthèse vocale en temps réel, génération de réponses contextualisées, gestion des appels et interface web dédiée aux opérateurs et aux hôpitaux.\n" +
             "Le projet repose sur une architecture web connectée à une API distante, avec un frontend Next.js et un backend NestJS intégrant des services IA (Groq, ElevenLabs) et une base de données Supabase.\n" +
